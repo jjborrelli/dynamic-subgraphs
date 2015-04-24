@@ -1,5 +1,6 @@
 library(cheddar)
 library(magrittr)
+library(taxize)
 
 ## FUNCTIONS
 
@@ -61,6 +62,9 @@ pmTL84 <- PredationMatrix(TL84)
 pmTL86 <- PredationMatrix(TL86)
 
 ### Count subgraphs 
+g84 <- PredationMatrix(TL84) %>% graph.adjacency()
+g86 <- PredationMatrix(TL86) %>% graph.adjacency()
+
 
 mots84 <- PredationMatrix(TL84) %>% graph.adjacency() %>% list() %>% motif_counter()
 mots86 <- PredationMatrix(TL86) %>% graph.adjacency() %>% list() %>% motif_counter()
@@ -79,6 +83,22 @@ degs84 <- data.frame(inD = InDegree(TL84), outD = OutDegree(TL84))
 degs86 <- data.frame(inD = InDegree(TL86), outD = OutDegree(TL86))
 
 same <- rownames(s.part84) %in% rownames(s.part86)
-
+rownames(s.part86) == rownames(s.part84)[same]
 
 s.part86[rownames(s.part84[same, ]), ] - s.part84[same, ] 
+
+same2<- intersect(rownames(s.part86), rownames(s.part84))
+
+
+## Species names 
+
+# from union of 84 and 86 networks 
+sp.names <- graph.union(g84, g86) %>% get.adjacency(sparse = F) %>% colnames
+write.csv(sp.names, file = "data/TL_species.csv")
+
+sp.names[1:3]
+sp.cl <- classification(sp.names, db = "itis")
+
+sp.cl[is.na(sp.cl)] <- classification(names(sp.cl[is.na(sp.cl)]), db = "gbif")
+
+save(sp.cl, file = "data/TL_species_class.Rdata")
