@@ -1,6 +1,7 @@
 library(cheddar)
 library(magrittr)
 library(taxize)
+library(igraph)
 
 ## FUNCTIONS
 
