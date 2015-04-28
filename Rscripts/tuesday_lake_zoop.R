@@ -18,10 +18,27 @@ sort(unique(data_TL_zoop$taxon_name))
 # How many observations per species 
 sort(table(data_TL_zoop$taxon_name))
 
+# save the species names to a .csv
+zoop_names <- unique(data_TL_zoop$taxon_name)
+write.csv(zoop_names, file = "data/TL_zoop_species.csv")
+
 # convert dates to true dates 
 data_TL_zoop$date <- as.Date(data_TL_zoop$sampledate)
 
-# plot a time series
+# plot an individual time series 
+# possible response variables are "density" and "total_biomass"
+temp_data <- subset(data_TL_zoop, taxon_name=="Nauplii")
+
+temp <- ggplot(temp_data, aes(date,density)) 
+temp <- temp + geom_point() + geom_line()
+temp <- temp + ylab("Number per liter")
+temp <- temp + xlab("Date")
+temp <- temp + theme_bw(base_size=18)
+temp <- temp + scale_x_date(labels=date_format("%Y"),breaks=date_breaks("year"))
+temp <- temp + theme(axis.text.x = element_text(angle=315,hjust=0)) # fix here
+temp
+
+# plot all time series
 for (i in unique(data_TL_zoop$taxon_name)){
 
   temp_data <- subset(data_TL_zoop, taxon_name==i)
@@ -31,7 +48,7 @@ for (i in unique(data_TL_zoop$taxon_name)){
   temp <- temp + ylab("Number per liter")
   temp <- temp + xlab("Date")
   temp <- temp + theme_bw(base_size=18)
-  temp <- temp + scale_x_date(labels=date_format("%Y"),breaks=date_breaks("year"))
+  temp <- temp + ggtitle(i)
   temp <- temp + theme(axis.text.x = element_text(angle=315,hjust=0)) # fix here
   print(temp)
   
