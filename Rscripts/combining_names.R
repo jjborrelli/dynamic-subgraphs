@@ -6,10 +6,10 @@ zoop_names # empirical zooplankton
 
 # save both empirical phyto and zoop names to a single .csv 
 # Use for working on manually resolving names in Excel 
-empirical_names <- data.frame(name=c(as.character(phyto_names),as.character(zoop_names)), 
+TL_empirical_species <- data.frame(name=c(as.character(phyto_names),as.character(zoop_names)), 
                               type=c(rep("phyto",length(phyto_names)),rep("zoop",length(zoop_names))))
 
-write.csv(empirical_names, file = "data/TL_empirical_species.csv")
+write.csv(TL_empirical_species, file = "data/TL_empirical_species.csv")
 
 #########################################################
 # Get a view at some of the taxa that I want to combine #
