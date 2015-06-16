@@ -11,10 +11,85 @@ TL_empirical_species <- data.frame(name=c(as.character(phyto_names),as.character
 
 write.csv(TL_empirical_species, file = "data/TL_empirical_species.csv")
 
-#########################################################
-# Get a view at some of the taxa that I want to combine #
-#########################################################
 
+
+###################################
+# Combining names - Phytoplankton # 
+###################################
+# make a new variable 
+data_TL_phyto$taxon_name_new <- data_TL_phyto$taxon_name
+
+# convert to character (not factor) so you can add new levels 
+data_TL_phyto$taxon_name_new <- as.character(data_TL_phyto$taxon_name_new)
+
+# manually do the combinations 
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Arthrodesmus incus"] <- "Arthrodesmus sp."
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Arthrodesmus octocornis"] <- "Arthrodesmus sp."
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Arthrodesmus subulatus"] <- "Arthrodesmus sp."
+
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Chrysosphaerella longispina (colonial)"] <- "Chrysosphaerella longispina"
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Chrysosphaerella sp."] <- "Chrysosphaerella longispina"
+
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Closteriopsis longissima"] <- "Closteriopsis longissimus"
+
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Cosmarium sp. (spiny)"] <- "Cosmarium sp. (spiny)"
+
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Dactylococcopsis fascicularis (<40)"] <- "Dactylococcopsis fascicularis"
+
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Gloeocystis ampla (ovoid)"] <- "Gloeocystis sp."
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Gloeocystis planctonica"] <- "Gloeocystis sp."
+
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Microcystis aeruginosa (<65)"] <- "Microcystis aeruginosa"
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Microcystis aeruginosa (>65)"] <- "Microcystis aeruginosa"
+
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Nostoc sp. (single trichomes)"] <- "Nostoc sp."
+
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Quadrigula sp."] <- "Quadrigula sp. 2"
+
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Rhizolenia sp."] <- "Rhizosolenia sp."
+
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Selenastrum sp."] <- "Selenastrum minutum"
+
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Staurastrum dejectum"] <- "Staurastrum sp."
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Staurastrum ophiura"] <- "Staurastrum sp."
+
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Synura sp. (colonial)"] <- "Synura sp."
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Synura uvella/spahgnicola (colonial)"] <- "Synura sp.."
+data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Synura uvella/sphagnicola"] <- "Synura sp."
+
+#################################
+# Combining names - Zooplankton # 
+#################################
+# make a new variable 
+data_TL_zoop$taxon_name_new <- data_TL_zoop$taxon_name
+
+# convert to character (not factor) so you can add new levels 
+data_TL_zoop$taxon_name_new <- as.character(data_TL_zoop$taxon_name_new)
+
+# manually do the combinations 
+data_TL_zoop$taxon_name_new[data_TL_zoop$taxon_name_new == "Ascomorpha ecaudis"] <- "Ascomorpha eucadis"
+
+data_TL_zoop$taxon_name_new[data_TL_zoop$taxon_name_new == "Bosmina"] <- "Bosmina longirostris"
+
+data_TL_zoop$taxon_name_new[data_TL_zoop$taxon_name_new == "colonial Conochilus sp."] <- "Conochilus (colonial)"
+
+data_TL_zoop$taxon_name_new[data_TL_zoop$taxon_name_new == "Cyclops varicans rubellus"] <- "Cyclops varians rubellus"
+
+data_TL_zoop$taxon_name_new[data_TL_zoop$taxon_name_new == "Kellicotia bostoniensis"] <- "Kellicottia bostoniensis"
+data_TL_zoop$taxon_name_new[data_TL_zoop$taxon_name_new == "Kellicotia longispina"] <- "Kellicottia longispina"
+
+data_TL_zoop$taxon_name_new[data_TL_zoop$taxon_name_new == "Leptodiaptomus sp."] <- "Leptodiaptomus siciloides"
+
+data_TL_zoop$taxon_name_new[data_TL_zoop$taxon_name_new == "single Conochilus sp,"] <- "Conochilus (solitary)"
+
+data_TL_zoop$taxon_name_new[data_TL_zoop$taxon_name_new == "Tropocyclops prasinus mexicanus"] <- "Tropocyclops prasinus"
+
+
+
+
+##################################################
+# Get a view at some of the taxa that I combined #
+##################################################
 # convert to a data.table  
 library(data.table)
 data_table_phyto <- data.table(data_TL_phyto)
@@ -114,66 +189,3 @@ data_TL_phyto[data_TL_phyto$taxon_name=="Oocystis sp. 2",]
 
 data_TL_phyto[data_TL_phyto$taxon_name=="Selenastrum minutum",]
 data_TL_phyto[data_TL_phyto$taxon_name=="Selenastrum sp.",] # only in 1988
-
-
-
-
-###################################
-# Combining names - Phytoplankton # 
-###################################
-# make a new variable 
-data_TL_phyto$taxon_name_new <- data_TL_phyto$taxon_name
-
-# convert to character (not factor) so you can add new levels 
-data_TL_phyto$taxon_name_new <- as.character(data_TL_phyto$taxon_name_new)
-
-# manually do the combinations 
-data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Arthrodesmus incus"] <- "Arthrodesmus sp."
-data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Arthrodesmus octocornis"] <- "Arthrodesmus sp."
-data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Arthrodesmus subulatus"] <- "Arthrodesmus sp."
-
-data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Chrysosphaerella longispina (colonial)"] <- "Chrysosphaerella longispina"
-data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Chrysosphaerella sp."] <- "Chrysosphaerella longispina"
-
-data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Cosmarium sp. (spiny)"] <- "Cosmarium sp. (spiny)"
-
-data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Dactylococcopsis fascicularis (<40)"] <- "Dactylococcopsis fascicularis"
-
-data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Gloeocystis ampla (ovoid)"] <- "Gloeocystis sp."
-data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Gloeocystis planctonica"] <- "Gloeocystis sp."
-
-data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Microcystis aeruginosa (<65)"] <- "Microcystis aeruginosa"
-data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Microcystis aeruginosa (>65)"] <- "Microcystis aeruginosa"
-
-data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Nostoc sp. (single trichomes)"] <- "Nostoc sp."
-
-data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Quadrigula sp."] <- "Quadrigula sp. 2"
-
-data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Selenastrum sp."] <- "Selenastrum minutum"
-
-data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Staurastrum dejectum"] <- "Staurastrum sp."
-data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Staurastrum ophiura"] <- "Staurastrum sp."
-
-data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Synura sp. (colonial)"] <- "Synura sp."
-data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Synura uvella/spahgnicola (colonial)"] <- "Synura sp.."
-data_TL_phyto$taxon_name_new[data_TL_phyto$taxon_name_new == "Synura uvella/sphagnicola"] <- "Synura sp."
-
-#################################
-# Combining names - Zooplankton # 
-#################################
-# make a new variable 
-data_TL_zoop$taxon_name_new <- data_TL_zoop$taxon_name
-
-# convert to character (not factor) so you can add new levels 
-data_TL_zoop$taxon_name_new <- as.character(data_TL_zoop$taxon_name_new)
-
-# manually do the combinations 
-data_TL_zoop$taxon_name_new[data_TL_zoop$taxon_name_new == "Bosmina"] <- "Bosmina longirostris"
-
-data_TL_zoop$taxon_name_new[data_TL_zoop$taxon_name_new == "colonial Conochilus sp."] <- "Conochilus (colonial)"
-
-data_TL_zoop$taxon_name_new[data_TL_zoop$taxon_name_new == "Leptodiaptomus sp."] <- "Leptodiaptomus siciloides"
-
-data_TL_zoop$taxon_name_new[data_TL_zoop$taxon_name_new == "single Conochilus sp,"] <- "Conochilus (solitary)"
-
-data_TL_zoop$taxon_name_new[data_TL_zoop$taxon_name_new == "Tropocyclops prasinus mexicanus"] <- "Tropocyclops prasinus"
