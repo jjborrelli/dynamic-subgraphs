@@ -31,28 +31,36 @@ temp_data <- subset(data_TL_zoop, taxon_name=="Nauplii")
 
 temp <- ggplot(temp_data, aes(date,density)) 
 temp <- temp + geom_point() + geom_line()
-temp <- temp + ylab("Number per liter")
+temp <- temp + ylab("Density")
 temp <- temp + xlab("Date")
 temp <- temp + theme_bw(base_size=18)
 temp <- temp + scale_x_date(labels=date_format("%Y"),breaks=date_breaks("year"))
 temp <- temp + theme(axis.text.x = element_text(angle=315,hjust=0)) # fix here
 temp
 
-# plot all time series
+# plot & save all time series
 for (i in unique(data_TL_zoop$taxon_name)){
-
+  
   temp_data <- subset(data_TL_zoop, taxon_name==i)
   
   temp <- ggplot(temp_data, aes(date,density)) 
   temp <- temp + geom_point() + geom_line()
-  temp <- temp + ylab("Number per liter")
+  temp <- temp + ylab("Density")
   temp <- temp + xlab("Date")
-  temp <- temp + theme_bw(base_size=18)
+  temp <- temp + theme_bw(base_size=12)
   temp <- temp + ggtitle(i)
   temp <- temp + theme(axis.text.x = element_text(angle=315,hjust=0)) # fix here
-  print(temp)
+  
+  # if the taxa name contains > or <, you need to remove that character 
+  i <- sub("<", "less", i)
+  i <- sub(">", "more", i)
+  i <- sub("/", "-", i)
+  
+  ggsave(paste("time_series_plots/zoop/",i,".jpg",sep=""),temp)
   
 }
+
+
 
 
 

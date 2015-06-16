@@ -59,6 +59,7 @@ data(TL86)
 NPS(TL84)
 NPS(TL86)
 PlotWebByLevel(TL84)
+PlotWebByLevel(TL86)
 pmTL84 <- PredationMatrix(TL84)
 pmTL86 <- PredationMatrix(TL86)
 
