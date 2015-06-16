@@ -37,9 +37,9 @@ ts_stats_zoop_by_year <-
     group_by(taxon_name_new, year4) %>%
     summarise(
       n_obs = length(density),
-      avg_conc = mean(density),
-      sd_conc = sd(density),
-      cv_conc = sd_conc/avg_conc
+      avg_dens = mean(density),
+      sd_dens = sd(density),
+      cv_dens = sd_dens/avg_dens
     )
 
 # zoop - across all years
@@ -48,9 +48,9 @@ ts_stats_zoop_all_yr <-
     group_by(taxon_name_new) %>%
     summarise(
       n_obs = length(density),
-      avg_conc = mean(density),
-      sd_conc = sd(density),
-      cv_conc = sd_conc/avg_conc
+      avg_dens = mean(density),
+      sd_dens = sd(density),
+      cv_dens = sd_dens/avg_dens
     )
 
 
