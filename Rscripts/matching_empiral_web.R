@@ -6,7 +6,12 @@ data_TL_zoop_match <- subset(data_TL_zoop, data_TL_zoop$taxon_name_new %in% sp.n
 sort(unique(data_TL_phyto_match$taxon_name_new))
 sort(unique(data_TL_zoop_match$taxon_name_new))
 
+# number of mathcing taxa 
+length(unique(data_TL_phyto_match$taxon_name_new))
+length(unique(data_TL_zoop_match$taxon_name_new))
+
 # use to double check all matches 
 sort(sp.names)
 sort(unique(data_TL_phyto$taxon_name_new))
 sort(unique(data_TL_zoop$taxon_name_new))
+
