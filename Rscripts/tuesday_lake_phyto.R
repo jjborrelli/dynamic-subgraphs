@@ -38,6 +38,17 @@ temp <- temp + scale_x_date(labels=date_format("%Y"),breaks=date_breaks("year"))
 temp <- temp + theme(axis.text.x = element_text(angle=315,hjust=0)) # fix here
 temp
 
+# facet by taxon_name 
+temp <- ggplot(data_TL_phyto, aes(date,concentration)) 
+temp <- temp + geom_point() + geom_line()
+temp <- temp + facet_wrap(~taxon_name)
+temp <- temp + ylab("Number per liter")
+temp <- temp + xlab("Date")
+temp <- temp + theme_bw(base_size=18)
+temp <- temp + scale_x_date(labels=date_format("%Y"),breaks=date_breaks("year"))
+temp <- temp + theme(axis.text.x = element_text(angle=315,hjust=0)) # fix here
+temp
+
 # plot & save all time series
 for (i in unique(data_TL_phyto$taxon_name)){
 
@@ -60,14 +71,5 @@ for (i in unique(data_TL_phyto$taxon_name)){
   
 }
 
-# facet by taxon_name 
-temp <- ggplot(data_TL_phyto, aes(date,concentration)) 
-temp <- temp + geom_point() + geom_line()
-temp <- temp + facet_wrap(~taxon_name)
-temp <- temp + ylab("Number per liter")
-temp <- temp + xlab("Date")
-temp <- temp + theme_bw(base_size=18)
-temp <- temp + scale_x_date(labels=date_format("%Y"),breaks=date_breaks("year"))
-temp <- temp + theme(axis.text.x = element_text(angle=315,hjust=0)) # fix here
-temp
+
 
