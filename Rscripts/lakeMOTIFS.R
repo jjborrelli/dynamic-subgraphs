@@ -2,6 +2,7 @@ library(cheddar)
 library(magrittr)
 library(taxize)
 library(igraph)
+library(NetIndices)
 
 ## FUNCTIONS
 
@@ -54,53 +55,53 @@ listROLES <- function(x){
 data(TL84)
 data(TL86)
 
-### Properties of the dataset 
-
-NPS(TL84)
-NPS(TL86)
-PlotWebByLevel(TL84)
-PlotWebByLevel(TL86)
-pmTL84 <- PredationMatrix(TL84)
-pmTL86 <- PredationMatrix(TL86)
-
-### Count subgraphs 
+### Make graphs 
 g84 <- PredationMatrix(TL84) %>% graph.adjacency()
 g86 <- PredationMatrix(TL86) %>% graph.adjacency()
-
-
-mots84 <- PredationMatrix(TL84) %>% graph.adjacency() %>% list() %>% motif_counter()
-mots86 <- PredationMatrix(TL86) %>% graph.adjacency() %>% list() %>% motif_counter()
-
-### list subgraph participation  
-s.part84 <- listROLES(pmTL84)
-rownames(s.part84) <- rownames(NPS(TL84))
-colnames(s.part84) <- colnames(mots84)
-
-s.part86 <- listROLES(pmTL86)
-rownames(s.part86) <- rownames(NPS(TL86))
-colnames(s.part86) <- colnames(mots86)
-
-
-degs84 <- data.frame(inD = InDegree(TL84), outD = OutDegree(TL84))
-degs86 <- data.frame(inD = InDegree(TL86), outD = OutDegree(TL86))
-
-same <- rownames(s.part84) %in% rownames(s.part86)
-rownames(s.part86) == rownames(s.part84)[same]
-
-s.part86[rownames(s.part84[same, ]), ] - s.part84[same, ] 
-
-same2<- intersect(rownames(s.part86), rownames(s.part84))
-
 
 ## Species names 
 
 # from union of 84 and 86 networks 
 sp.names <- graph.union(g84, g86) %>% get.adjacency(sparse = F) %>% colnames
-write.csv(sp.names, file = "data/TL_species.csv")
 
-sp.names[1:3]
-sp.cl <- classification(sp.names, db = "itis")
+#write.csv(sp.names, file = "data/TL_species.csv")
+#sp.cl <- classification(sp.names, db = "itis")
+#sp.cl[is.na(sp.cl)] <- classification(names(sp.cl[is.na(sp.cl)]), db = "gbif")
+#save(sp.cl, file = "data/TL_species_class.Rdata")
 
-sp.cl[is.na(sp.cl)] <- classification(names(sp.cl[is.na(sp.cl)]), db = "gbif")
+##
+#  Link structure and dynamics
+## 
+spp <- read.csv("./data/TL_empirical_species.csv", row.names = 1)
 
-save(sp.cl, file = "data/TL_species_class.Rdata")
+TLg <- graph.union(g84, g86)
+aTL <- get.adjacency(TLg, sparse = F)
+
+zoop.stat <- read.csv("./time_series_stats/ts_stats_zoop_all_yr.csv", row.names = 1)
+
+# common names between two datasets
+inDAT <- intersect(rownames(zoop.stat), rownames(aTL))
+
+
+#trophic position and omnivory index
+TL.troph <- TrophInd(aTL)[inDAT,]
+
+#degree
+indeg <- degree(graph = TLg, mode = "in")[inDAT]
+outdeg <- degree(graph = TLg, mode = "out")[inDAT]
+
+#centrality
+## vertex betweenness
+vbet <- betweenness(TLg)[inDAT]
+## eigenvector centrality
+evc <- evcent(graph = TLg)$vector[inDAT]
+## google pagerank
+pr <- page.rank(graph = TLg)$vector[inDAT]
+## subgraph centrality
+subcent <- subgraph.centrality(graph = TLg)[inDAT]
+
+# zooDAT is a dataframe of zooplankton data
+zooDAT <- cbind(zoop.stat[inDAT,], TL.troph, indeg, outdeg, vbet, evc, pr, subcent)
+
+summary(prcomp(zooDAT[-10, ]))
+
