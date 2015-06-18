@@ -1,0 +1,182 @@
+web ,ref,Kingdom,Phylum,Class,Order,Family,Genus,Species,Sub/Var,Common Name
+1,1,Animalia,Chordata,Osteichthyes,Perciformes,Percidae,Perca,flavescens,,yellow perch juv
+4,2,Animalia,Chordata,Osteichthyes,Perciformes,Percidae,Perca,flavescens,,yellow perch
+5,3,Animalia,Chordata,Osteichthyes,Perciformes,Centrarchidae,Micropterus ,salmoides,,largemouth bass juv.
+6,4,Animalia,Chordata,Osteichthyes,Perciformes,Centrarchidae,Micropterus ,salmoides,,largemouth bass
+7,5,Animalia,Chordata,Osteichthyes,Perciformes,Centrarchidae,Ambloplites,rupestris,,rock bass juv.
+8,6,Animalia,Chordata,Osteichthyes,Perciformes,Centrarchidae,Ambloplites,rupestris,,rock bass
+9,7,Animalia,Chordata,Osteichthyes,Perciformes,Centrarchidae,Pomoxis,nigromaculatus,,black crappie juv.
+10,8,Animalia,Chordata,Osteichthyes,Perciformes,Centrarchidae,Pomoxis,nigromaculatus,,black crappie
+11,9,Animalia,Chordata,Osteichthyes,Esociformes,Umbridae,Umbra,nf,,mudminnow
+12,10,Animalia,Chordata,Osteichthyes,Cypriniformes,Cyprinidae,Notemigonus,crysoleucus,,shiner
+13,11,Animalia,Chordata,nf,nf,nf,nf,nf,,fish eggs
+15,12,Animalia,Arthropoda,Maxillopoda,Copepoda,Diaptomidae,Diaptomus,minutus,,pelagic copepod
+16,13,Animalia,Arthropoda,Maxillopoda,Eucopepoda,Cyclopidae,Diacyclops,thomasi,,pelagic copepod
+17,14,Animalia,Arthropoda,Maxillopoda,Eucopepoda,Cyclopidae,Mesocyclops,edax,,pelagic copepod
+18,15,Animalia,Arthropoda,Maxillopoda,Eucopepoda,Cyclopidae,Tropocyclops,prasinus,,pelagic copepod
+19,16,Animalia,Arthropoda,Maxillopoda,Eucopepoda,Temoridae,Epischura,lacustris,,pelagic copepod
+20,17,Animalia,Arthropoda,Branchiopoda,Cladocera,Bosminidae,Bosmina,longirostris,,pelagic cladocera
+21,18,Animalia,Arthropoda,Branchiopoda,Cladocera,Bosminidae,Eubosmina,nf,,pelagic cladocera
+22,19,Animalia,Arthropoda,Branchiopoda,Cladocera,Daphnidae,Daphnia,galeata,mendotae,pelagic cladocera
+23,20,Animalia,Arthropoda,Branchiopoda,Cladocera,Daphnidae,Daphnia,parvula,,pelagic cladocera
+24,21,Animalia,Arthropoda,Branchiopoda,Cladocera,Sididae,Diaphanosoma,birgei,,pelagic cladocera
+25,22,Animalia,Arthropoda,Branchiopoda,Cladocera,Holopedidae,Holopedium,gibberum,,pelagic cladocera
+26,23,Animalia,Arthropoda,Branchiopoda,Cladocera,Leptodoridae,Leptodora,kindtii,,pelagic cladocera
+27,24,Animalia,Arthropoda,Branchiopoda,Cladocera,Polyphemidae,Polyphemus,pediculuc,,pelagic cladocera
+28,25,Animalia,Rotifera,Monogonanta,Flosculariacea,Conochilidae,Conochilus,unicornis,,pelagic rotifers
+29,26,Animalia,Rotifera,Monogonanta,Flosculariacea,Conochilidae,Conochiloides,nf,,pelagic rotifers
+30,27,Animalia,Rotifera,Monogonanta,Ploima,Brachionidae,Kellicottia,longispina,,pelagic rotifers
+31,28,Animalia,Rotifera,Monogonanta,Ploima,Brachionidae,Kellicottia,bostoniensis,,pelagic rotifers
+32,29,Animalia,Rotifera,Monogonanta,Ploima,Brachionidae,Keratella,cochlearis,,pelagic rotifers
+33,30,Animalia,Rotifera,Monogonanta,Ploima,Brachionidae,Keratella,taurocephala,,pelagic rotifers
+34,31,Animalia,Rotifera,Monogonanta,Ploima,Brachionidae,Keratella,crassa,,pelagic rotifers
+35,32,Animalia,Rotifera,Monogonanta,Ploima,Brachionidae,Keratella,hiemalis,,pelagic rotifers
+36,33,Animalia,Rotifera,Monogonanta,Ploima,Dicranophoridae,Polyarthra,remata,,pelagic rotifers
+37,34,Animalia,Rotifera,Monogonanta,Ploima,Dicranophoridae,Polyarthra,vulgaris,,pelagic rotifers
+38,35,Animalia,Rotifera,Monogonanta,Ploima,Trichocercidae,Trichocerca,cylindrica,,pelagic rotifers
+39,36,Animalia,Rotifera,Monogonanta,Ploima,Asplanchidae,Asplanchna,nf,,pelagic rotifers
+40,37,Animalia,Rotifera,Monogonanta, , ,Gastropus,nf,,pelagic rotifers
+41,38,Animalia,Rotifera,Monogonanta, , ,Synchaeta,nf,,pelagic rotifers
+42,39,Animalia,Arthropdoa,Maxillopoda,Copepoda,nf,Nauplii,nf,,juvenile pelagic zooplankton
+43,40,Animalia,Rotifera,Monogonanta,nf,nf,nf,nf,,juvenile pelagic zooplankton
+44,41,Animalia,Rotifera,Monogonanta,nf,nf,nf,nf,,juvenile pelagic zooplankton
+47,42,Animalia,Arthropoda,Branchiopoda,Cladocera,Chydoridae,Alona,affinis,,benthic cladocera
+48,43,Animalia,Arthropoda,Branchiopoda,Cladocera,Chydoridae,Alona,quadrangularis,,benthic cladocera
+49,44,Animalia,Arthropoda,Branchiopoda,Cladocera,Chydoridae,Alona,rustica,,benthic cladocera
+50,45,Animalia,Arthropoda,Branchiopoda,Cladocera,Chydoridae,Alona,intermedia,,benthic cladocera
+51,46,Animalia,Arthropoda,Branchiopoda,Cladocera,Chydoridae,Alona,excisa,,benthic cladocera
+52,47,Animalia,Arthropoda,Branchiopoda,Cladocera,Chydoridae,Disparalona,acutirostris,,benthic cladocera
+53,48,Animalia,Arthropoda,Branchiopoda,Cladocera,Chydoridae,Chydorus,sp1,,benthic cladocera
+54,49,Animalia,Arthropoda,Branchiopoda,Cladocera,Chydoridae,Chydorus,sp2,,benthic cladocera
+55,50,Animalia,Arthropoda,Branchiopoda,Cladocera,Macrothricidae,Acantholeberis,curvirostris,,benthic cladocera
+56,51,Animalia,Arthropoda,Branchiopoda,Cladocera,Bosminidae,Ophryoxus,gracilis,,benthic cladocera
+57,52,Animalia,Arthropoda,Branchiopoda,Cladocera,Daphnidae,Scapholeberis,kingi,,benthic cladocera
+58,53,Animalia,Arthropoda,Branchiopoda,Cladocera,Sididae,Sida,crystallina,,benthic cladocera
+59,54,Animalia,Arthropoda,Maxillopoda,Eucopepoda,Cyclopidae,Macrocyclops,albidus,,benthic copepods
+60,55,Animalia,Arthropoda,Maxillopoda,Eucopepoda,Cyclopidae,Eucyclops,serrulatus,,benthic copepods
+61,56,Animalia,Arthropoda,Maxillopoda,Eucopepoda,Cyclopidae,Acanthocyclops,nf,,benthic copepods
+62,57,Animalia,Arthropoda,Maxillopoda,Eucopepoda,Cyclopidae,Microcyclops,rubellus,,benthic copepods
+63,58,Animalia,Arthropoda,Maxillopoda,Eucopepoda,nf,nf,nf,,benthic copepods
+64,59,Animalia,Arthropoda,Maxillopoda,Eucopepoda,nf,nf,nf,,benthic copepods
+65,60,Animalia,Arthropoda,Insecta,Hemiptera,Gerridae,Gerris,nf,,hemiptera
+66,61,Animalia,Arthropoda,Insecta,Coleoptera,Coleoptera,Hydroporus,nf,,coleoptera
+67,62,Animalia,Arthropoda,Insecta,Ephemeroptera,Leptophlebiidae,Leptophlebia,nf,,ephemeroptera
+68,63,Animalia,Arthropoda,Insecta,Ephemeroptera,Caenidae,Caenis,nf,,ephemeroptera
+69,64,Animalia,Arthropoda,Insecta,Trichoptera,Leptoceridae,Oecetis,nf,,trichoptera
+70,65,Animalia,Arthropoda,Insecta,Trichoptera,Leptoceridae,Mystacides,nf,,trichoptera
+71,66,Animalia,Arthropoda,Insecta,Trichoptera,Limnephilidae,Limnephilus,nf,,trichoptera
+72,67,Animalia,Arthropoda,Insecta,Trichoptera,Phryganeidae,Agrypnia,nf,,trichoptera
+73,68,Animalia,Arthropoda,Insecta,Trichoptera,Phryganeidae,Banksiola,nf,,trichoptera
+74,69,Animalia,Arthropoda,Insecta,Trichoptera,Molannidae,Molanna,nf,,trichoptera
+75,70,Animalia,Arthropoda,Insecta,Trichoptera,Polycentropodidae,Polycentropus,nf,,trichoptera
+76,71,Animalia,Arthropoda,Insecta,Odonata,,Anisopetra ,nf,,odonata
+77,72,Animalia,Arthropoda,Insecta,Odonata,Libellulidae,Libellula,nf,,odonata
+78,73,Animalia,Arthropoda,Insecta,Odonata,Libellulidae,Sympetrum,nf,,odonata
+79,74,Animalia,Arthropoda,Insecta,Odonata,Coenagrionidae,Enallagma,nf,,odonata
+80,75,Animalia,Arthropoda,Insecta,Neuroptera,Sisyridae,Climacia,nf,,neuroptera
+82,76,Animalia,Arthropoda,Insecta,Hemiptera,Vellidae,nf,nf,,hemiptera
+83,77,Animalia,Arthropoda,Insecta,Hemiptera,Notonectidae,nf,nf,,hemiptera
+84,78,Animalia,Arthropoda,Insecta,Megaloptera,Sialidae,Sialis,nf,,megaloptera
+85,79,Animalia,Arthropoda,Insecta,Lepidoptera,Pyralidae,Eoparagyractis,nf,,lepidoptera
+86,80,Animalia,Arthropoda,Insecta,Diptera,Ceroptogonidae,Bezzia,nf,,diptera
+87,81,Animalia,Arthropoda,Insecta,Diptera,Ceroptogonidae,Sphaeromais,nf,,diptera
+88,82,Animalia,Arthropoda,Insecta,Diptera,Choaboridae,Choaborus,albatus,,diptera
+89,83,Animalia,Arthropoda,Insecta,Diptera,Choaboridae,Chaoborus,punctipennis,,diptera
+90,84,Animalia,Arthropoda,Insecta,Diptera, ,Albabesmyia,nf,,diptera
+91,85,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Clinotanypus,nf,,chironomid
+92,86,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Djalmabatista,nf,,chironomid
+93,87,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Guttipelopia,nf,,chironomid
+94,88,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Larsia,nf,,chironomid
+95,89,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Macropelopis,nf,,chironomid
+96,90,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Procladius,nf,,chironomid
+97,91,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Chaetocladius,nf,,chironomid
+98,92,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Corynoneura,nf,,chironomid
+99,93,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Cricotopus,nf,,chironomid
+100,94,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Nanocladius,nf,,chironomid
+101,95,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Micropsectra,nf,,chironomid
+102,96,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Paratanytarsus,nf,,chironomid
+103,97,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Tanytarsus,nf,,chironomid
+104,98,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Chironomus,nf,,chironomid
+105,99,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Cladopelma,nf,,chironomid
+106,100,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Cryptochironomus,nf,,chironomid
+107,101,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Endochrionomus,nf,,chironomid
+108,102,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Glyptotendipes,nf,,chironomid
+109,103,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Microtendipes,nf,,chironomid
+110,104,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Parachironomus,nf,,chironomid
+111,105,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Paratendipes,nf,,chironomid
+112,106,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Polypedilum,nf,,chironomid
+113,107,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Pseudochironomus,nf,,chironomid
+114,108,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Stenochironomus,nf,,chironomid
+115,109,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Stictochironomus,nf,,chironomid
+116,110,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Xenochironomus,nf,,chironomid
+118,111,Animalia,Mollusca,Pelecypoda,nf,nf,nf,nf,,mollusc
+119,112,Animalia,Mollusca,Gastropoda,Mesogastropoda,Viviparidae,Campeloma,decisum,,mollusc
+120,113,Animalia,Mollusca,Pelecypoda,nf,Sphaeriidae,nf,nf,,mollusc
+121,114,Animalia,Annelida,Oligochaeta,nf,nf,nf,nf,,annelid 
+122,115,Animalia,Annelida,Hirundinidae,nf,nf,nf,nf,,annelid 
+123,116,Animalia,Platyhelminthes,Turbellaria,Tricladida,nf,nf,nf,,tubellaria
+124,117,Animalia,Arthropoda,Malacostraca,Amphipoda,Crangonyctidae,Crangonyx,gracilis,,amphipod
+125,118,Animalia,Porifera,Demospongiae,Ceractinormorpha,Spongillidae,Spongilla,lacustris,,porifera
+126,119,Animalia,Porifera,Demospongiae,Ceractinormorpha,nf,Ephydatia,muelleri,,porifera
+127,120,Animalia,Porifera,Demospongiae,nf,nf,Corvomyenia,everetti,,porifera
+128,121,Animalia,Arthropdoa,Hydracarina,nf,nf,nf,nf,,arthropod
+131,122,Proctoctista, , , , ,Bambusina,nf,,filamentous algae
+132,123,Proctoctista,Rhodophyta,Rhodophyceae,Nemalionales,Batrachospermaceae,Batrachospermum,nf,,filamentous algae
+133,124,Proctoctista,Chlorophyta,Chlorophyceae,Ulotrichales,Ulotrichaceae,Binuclearia,nf,,filamentous algae
+134,125,Proctoctista,Chlorophyta,Chlorophyceae,Oedogoniales,Oedogoniaceae,Bulbochaete,nf,,filamentous algae
+135,126,Proctoctista, , , , ,Desmidium,nf,,filamentous algae
+136,127,Proctoctista,Chlorophyta,Chlorophyceae,Ulotrichales,Ulotrichaceae,Geminella,nf,,filamentous algae
+137,128,Proctoctista,Cyanophyta,Myxophyceae,Homogonales,Stigonemataceae,Groenbladia,nf,,filamentous algae
+138,129,Proctoctista,Cyanophyta,Myxophyceae,Homogonales,Stigonemataceae,Hapalosiphon,nf,,filamentous algae
+139,130,Proctoctista, , , , ,Hyalotheca,nf,,filamentous algae
+140,131,Proctoctista,Cyanophyta,Myxophyceae,Hormogonales,Oscillatoriaceae,Lyngbya,nf,,filamentous algae
+141,132,Proctoctista,Cyanophyta,Myxophyceae,Hormogonales,Scytonemataceae,Microchaete,nf,,filamentous algae
+142,133,Proctoctista,Cyanophyta,Myxophyceae,Hormogonales,Oscillatoriaceae,Microcoleus,nf,,filamentous algae
+143,134,Proctoctista,Cyanophyta,Chlorophyceae,Zygnematales,Zygnemataceae,Mougeotia,nf,,filamentous algae
+144,135,Proctoctista,Cyanophyta,Chlorophyceae,Oedogoniales,Oedogoniaceae,Oedogonium,nf,,filamentous algae
+145,136,Proctoctista,Cyanophyta,Myxophyceae,Hormogonales,Oscillatoriaceae,Oscillatoria,nf,,filamentous algae
+146,137,Proctoctista,Cyanophyta,Myxophyceae,Hormogonales,Oscillatoriaceae,Phormidium,nf,,filamentous algae
+147,138,Proctoctista,Cyanophyta,Myxophyceae,Hormogonales,Scytonemataceae,Plectonema,nf,,filamentous algae
+148,139,Proctoctista,Cyanophyta,Chlorophyceae,Ulotrichales,Ulotrichaceae,Radiofilum,nf,,filamentous algae
+149,140,Proctoctista,Cyanophyta,Chlorophyceae,Cladophorales,Cladophoraceae,Rhizoclonium,nf,,filamentous algae
+150,141,Proctoctista,Cyanophyta,Myxophyceae,Hormogonales,Oscillatoriaceae,Schizothrix,nf,,filamentous algae
+151,142,Proctoctista,Cyanophyta,Myxophyceae,Hormogonales,Scytonemataceae,Scytonema,nf,,filamentous algae
+152,143,Proctoctista, , , , ,Sphaerozosma,nf,,filamentous algae
+153,144,Proctoctista,Chlorophyta,Chlorophyceae,Zygnematales,Zygnemataceae,Spirogyra,nf,,filamentous algae
+154,145,Proctoctista,Chrsophyta,Xanthophyceae,Heterotrichales,Tribonemataceae,Tribonema,nf,,filamentous algae
+155,146,Proctoctista,Chlorophyta,Chlorophyceae,Zygnematales,Zygnemataceae,Zygnema,nf,,cyanobacteria
+158,147,Proctoctista,Cyanophyta,Myxophyceae,Chroococcales,Chroococcaceae,Chroococcus,nf,,cyanobacteria
+159,148,Proctoctista,Cyanophyta,Myxophyceae,Chroococcales,Chroococcaceae,Gloeothece,nf,,cyanobacteria
+160,149,Proctoctista,Cyanophyta,Myxophyceae,Chroococcales,Chroococcaceae,Merismopedia,nf,,cyanobacteria
+161,150,Monera,Eubacteria,,,,Aphanocapsa,nf,,cyanobacteria
+162,151,Monera,Eubacteria,,,,Gomphosphaeria,nf,,cyanobacteria
+163,152,Monera,Eubacteria,,,,Coelosphaerium,nf,,cyanobacteria
+164,153,Monera,Eubacteria,,,,Rhabdoderma,nf,,cyanobacteria
+165,154,Monera,Eubacteria,,,,Aphanothece,nf,,cyanobacteria
+166,155,Monera,Eubacteria,,,,Anabaena,nf,,cyanobacteria
+167,156,Protoctista,,,,,Arthrodesmus,nf,,green algae
+168,157,Protoctista,,,,,Cosmarium,nf,,green algae
+169,158,Protoctista,,,,,Crucigenia,nf,,green algae
+170,159,Protoctista,,,,,Euastrum,nf,,green algae
+171,160,Protoctista,,,,,Oocystis,nf,,green algae
+172,161,Protoctista,,,,,Pediastrum,nf,,green algae
+173,162,Protoctista,,,,,Quadrigula,nf,,green algae
+174,163,Protoctista,,,,,Schroederia,nf,,green algae
+175,164,Protoctista,,,,,Spondylosium,nf,,green algae
+176,165,Protoctista,,,,,Stauastrum,nf,,green algae
+177,166,Protoctista,,,,,Tetraedron,nf,,green algae
+178,167,Protoctista,,,,,Ankistrodesmus,nf,,green algae
+179,168,Protoctista,,,,,Xanthidium,nf,,green algae
+180,169,Protoctista,,,,,Elaktothrix,nf,,green algae
+181,170,Protoctista,,,,,Scenedesmus,nf,,green algae
+182,171,Protoctista,Sarcomastigophora,Phytomastigophora,Euglenida,nf,Phacus,nf,,euglenophyta
+183,172,Protoctista,Sarcomastigophora,Phytomastigophora,Euglenida,nf,Trachelomonas,nf,,euglenophyta
+186,173,Protoctista,nf,nf,nf,nf,Chroomonas,nf,,cryptophyta
+187,174,Protoctista,nf,nf,nf,nf,Cryptomonas,nf,,cryptophyta
+188,175,Protoctista,Chlorophyta,Chrysophyceae,nf,nf,Asterionella,nf,,chrysophyceae
+189,176,Protoctista,Chlorophyta,Chrysophyceae,nf,nf,Dinobryon,nf,,chrysophyceae
+190,177,Protoctista,Chlorophyta,Chrysophyceae,Chrysomonadales,Mallomonadaceae,Mallomonas,nf,,chrysophyceae
+191,178,Protoctista,Chlorophyta,Chrysophyceae,nf,nf,Synedra,nf,,chrysophyceae
+192,179,Protoctista,Chlorophyta,Chrysophyceae,Chrysomonadales,Synuraceae,Synura,nf,,chrysophyceae
+193,180,Protoctista,Chlorophyta,Chrysophyceae,nf,nf,Tabellaria,nf,,chrysophyceae
+200,181,,,,,,,,,fine organic matter
