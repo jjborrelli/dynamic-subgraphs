@@ -56,7 +56,7 @@ for (i in unique(data_TL_zoop$taxon_name)){
   i <- sub(">", "more", i)
   i <- sub("/", "-", i)
   
-  ggsave(paste("time_series_plots/zoop/",i,".jpg",sep=""),temp)
+  ggsave(paste("time_series_plots/zoop_TL/",i,".jpg",sep=""),temp)
   
 }
 

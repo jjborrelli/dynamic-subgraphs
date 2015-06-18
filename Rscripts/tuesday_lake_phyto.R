@@ -67,7 +67,7 @@ for (i in unique(data_TL_phyto$taxon_name)){
   i <- sub(">", "more", i)
   i <- sub("/", "-", i)
   
-  ggsave(paste("time_series_plots/phyto/",i,".jpg",sep=""),temp)
+  ggsave(paste("time_series_plots/phyto_TL/",i,".jpg",sep=""),temp)
   
 }
 
