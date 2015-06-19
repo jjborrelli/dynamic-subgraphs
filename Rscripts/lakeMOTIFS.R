@@ -103,13 +103,15 @@ subcent <- subgraph.centrality(graph = TLg)[inDAT]
 # zooDAT is a dataframe of zooplankton data
 zooDAT <- cbind(zoop.stat[inDAT,], TL.troph, indeg, outdeg, vbet, evc, pr, subcent)
 
-summary(prcomp(zooDAT[-10, ]))
+summary(prcomp(zooDAT[-10, -c(1:4)]))
 
 
 
 ## Little Rock Lake
 lr <- read.csv("./data/littlerock-edges.csv")
 lr.spp <- read.csv("./data/LittleRockSpeciesList.csv")
+
+lr.zoop <- read.csv("./data/LR_zoop_species.csv", row.names = 1)
 
 lrg <- graph.edgelist(matrix(c(lr[,2], lr[,1]), ncol = 2))
 alr <- get.adjacency(lrg, sparse = F)
@@ -136,5 +138,6 @@ pr.lr <- page.rank(graph = lrg)$vector
 ## subgraph centrality
 subcent.lr <- subgraph.centrality(graph = lrg)
 
-
+zooDAT.lr <- cbind(TL.troph.lr, indeg.lr, outdeg.lr, vbet.lr, evc.lr, pr.lr, subcent.lr)
+zooDAT.lr <- cbind(spp.names.lr, zooDAT.lr)
 
