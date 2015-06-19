@@ -105,3 +105,36 @@ zooDAT <- cbind(zoop.stat[inDAT,], TL.troph, indeg, outdeg, vbet, evc, pr, subce
 
 summary(prcomp(zooDAT[-10, ]))
 
+
+
+## Little Rock Lake
+lr <- read.csv("./data/littlerock-edges.csv")
+lr.spp <- read.csv("./data/LittleRockSpeciesList.csv")
+
+lrg <- graph.edgelist(matrix(c(lr[,2], lr[,1]), ncol = 2))
+alr <- get.adjacency(lrg, sparse = F)
+alr.fix <- alr[-c(which(colSums(alr) == 0 & rowSums(alr) == 0)), -c(which(colSums(alr) == 0 & rowSums(alr) == 0))]
+
+lrg <- graph.adjacency(alr.fix)
+
+spp.names.lr <- paste(lr.spp$Genus, lr.spp$Species, sep = " ")
+
+#trophic position and omnivory index
+TL.troph.lr <- TrophInd(alr.fix)
+
+#degree
+indeg.lr <- degree(graph = lrg, mode = "in")
+outdeg.lr <- degree(graph = lrg, mode = "out")
+
+#centrality
+## vertex betweenness
+vbet.lr <- betweenness(lrg)
+## eigenvector centrality
+evc.lr <- evcent(graph = lrg)$vector
+## google pagerank
+pr.lr <- page.rank(graph = lrg)$vector
+## subgraph centrality
+subcent.lr <- subgraph.centrality(graph = lrg)
+
+
+
