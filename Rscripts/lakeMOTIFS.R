@@ -111,6 +111,12 @@ summary(prcomp(zooDAT[-10, -c(1:4)]))
 lr <- read.csv("./data/littlerock-edges.csv")
 lr.spp <- read.csv("./data/LittleRockSpeciesList.csv")
 
+# fix "nf" to "sp." 
+lr.spp$Species[lr.spp$Species=="nf" & lr.spp$Genus!="nf"] <- "sp."
+
+# Add a genus,species column 
+lr.spp$taxa <- paste(lr.spp$Genus, lr.spp$Species, sep = " ")
+
 lr.zoop <- read.csv("./data/LR_zoop_species.csv", row.names = 1)
 
 lrg <- graph.edgelist(matrix(c(lr[,2], lr[,1]), ncol = 2))
