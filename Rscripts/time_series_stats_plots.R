@@ -53,3 +53,17 @@ zoop_LR_by_year <- zoop_LR_by_year + ylab("CV of concentration")
 zoop_LR_by_year <- zoop_LR_by_year + theme(axis.text.x = element_text(angle = -45, hjust = 0))
 zoop_LR_by_year
 ggsave("time_series_stats/plot_zoop_LR_CV_by_year.jpg",zoop_LR_by_year,width=8)
+
+##############
+# Chesapeake # 
+##############
+data_chesap <- read.csv("./time_series_stats/ts_stats_chesapeake.csv")
+
+chesap_cv_plot <- ggplot(data_chesap, aes(x=taxa,y=cv)) + geom_point()
+chesap_cv_plot <- chesap_cv_plot + theme_classic(base_size=14)
+chesap_cv_plot <- chesap_cv_plot + xlab("Taxa")
+chesap_cv_plot <- chesap_cv_plot + ylab("CV")
+chesap_cv_plot <- chesap_cv_plot + theme(axis.text.x = element_text(angle = -45, hjust = 0))
+chesap_cv_plot
+
+ggsave("time_series_stats/plot_chesapeake_CV.jpg",chesap_cv_plot,width=8)
