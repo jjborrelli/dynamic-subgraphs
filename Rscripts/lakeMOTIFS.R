@@ -77,34 +77,49 @@ spp <- read.csv("./data/TL_empirical_species.csv", row.names = 1)
 TLg <- graph.union(g84, g86)
 aTL <- get.adjacency(TLg, sparse = F)
 
-zoop.stat <- read.csv("./time_series_stats/ts_stats_zoop_all_yr.csv", row.names = 1)
+TL.zoop.stat <- read.csv("./time_series_stats/ts_stats_TL_zoop_all_yr.csv", row.names = 1)
+TL.phyto.stat <- read.csv("./time_series_stats/ts_stats_TL_phyto_all_yr.csv")
 
 # common names between two datasets
-inDAT <- intersect(rownames(zoop.stat), rownames(aTL))
-
+inDAT <- intersect(rownames(TL.zoop.stat), rownames(aTL))
+inDATphyto <- intersect(TL.phyto.stat[,1], rownames(aTL))
 
 #trophic position and omnivory index
 TL.troph <- TrophInd(aTL)[inDAT,]
+TL.troph.p <- TrophInd(aTL)[inDATphyto,]
 
 #degree
 indeg <- degree(graph = TLg, mode = "in")[inDAT]
 outdeg <- degree(graph = TLg, mode = "out")[inDAT]
 
+indegP <- degree(graph = TLg, mode = "in")[inDATphyto]
+outdegP <- degree(graph = TLg, mode = "out")[inDATphyto]
+
+
 #centrality
 ## vertex betweenness
 vbet <- betweenness(TLg)[inDAT]
+vbetP <- betweenness(TLg)[inDATphyto]
 ## eigenvector centrality
 evc <- evcent(graph = TLg)$vector[inDAT]
+evcP <- evcent(graph = TLg)$vector[inDATphyto]
 ## google pagerank
 pr <- page.rank(graph = TLg)$vector[inDAT]
+prP <- page.rank(graph = TLg)$vector[inDATphyto]
 ## subgraph centrality
 subcent <- subgraph.centrality(graph = TLg)[inDAT]
+subcentP <- subgraph.centrality(graph = TLg)[inDATphyto]
 
 # zooDAT is a dataframe of zooplankton data
-zooDAT <- cbind(zoop.stat[inDAT,], TL.troph, indeg, outdeg, vbet, evc, pr, subcent)
+zooDAT <- cbind(TL.zoop.stat[inDAT,], TL.troph, indeg, outdeg, vbet, evc, pr, subcent)
+phytoDAT <- cbind(TL.phyto.stat[TL.phyto.stat[,1] == inDATphyto, -1], TL.troph.p, indegP, outdegP, vbetP, evcP, prP, subcentP)
+rownames(phytoDAT) <- inDATphyto
+colnames(phytoDAT) <- colnames(zooDAT)
 
-summary(prcomp(zooDAT[-10, -c(1:4)]))
+TL.data <- rbind(phytoDAT, zooDAT)
+TL.data <- cbind(web = factor("TuesdayLake"), TL.data)
 
+summary(prcomp(TL.data[-10, -c(1:4)]))
 
 
 ## Little Rock Lake
@@ -118,6 +133,7 @@ lr.spp$Species[lr.spp$Species=="nf" & lr.spp$Genus!="nf"] <- "sp."
 lr.spp$taxa <- paste(lr.spp$Genus, lr.spp$Species, sep = " ")
 
 lr.zoop <- read.csv("./data/LR_zoop_species.csv", row.names = 1)
+
 
 lrg <- graph.edgelist(matrix(c(lr[,2], lr[,1]), ncol = 2))
 alr <- get.adjacency(lrg, sparse = F)
@@ -147,3 +163,11 @@ subcent.lr <- subgraph.centrality(graph = lrg)
 zooDAT.lr <- cbind(TL.troph.lr, indeg.lr, outdeg.lr, vbet.lr, evc.lr, pr.lr, subcent.lr)
 zooDAT.lr <- cbind(spp.names.lr, zooDAT.lr)
 
+lr.zoop.stat <- read.csv("./time_series_stats/ts_stats_LR_zoop_all_yr.csv")
+LR.names <- intersect(lr.zoop.stat$new_name, zooDAT.lr$spp.names.lr)
+
+zooDAT.LR <- zooDAT.lr[zooDAT.lr$spp.names.lr %in% LR.names,][with(zooDAT.LR, order(spp.names.lr)),]
+
+
+LR.data <- cbind(web = factor("LittleRock"), lr.zoop.stat[lr.zoop.stat$new_name %in% LR.names,2:5], zooDAT.LR[,2:9])
+rownames(LR.data) <- zooDAT.LR[,1]
