@@ -123,7 +123,7 @@ summary(prcomp(TL.data[-10, -c(1:4)]))
 
 
 ## Little Rock Lake
-lr <- read.csv("./data/littlerock-edges.csv")
+lr <- read.csv("./data/littlerock-edges.csv")[,c(2,1)]
 lr.spp <- read.csv("./data/LittleRockSpeciesList.csv")
 
 # fix "nf" to "sp." 
@@ -166,8 +166,35 @@ zooDAT.lr <- cbind(spp.names.lr, zooDAT.lr)
 lr.zoop.stat <- read.csv("./time_series_stats/ts_stats_LR_zoop_all_yr.csv")
 LR.names <- intersect(lr.zoop.stat$new_name, zooDAT.lr$spp.names.lr)
 
+zooDAT.LR <- zooDAT.lr[zooDAT.lr$spp.names.lr %in% LR.names,]
 zooDAT.LR <- zooDAT.lr[zooDAT.lr$spp.names.lr %in% LR.names,][with(zooDAT.LR, order(spp.names.lr)),]
-
 
 LR.data <- cbind(web = factor("LittleRock"), lr.zoop.stat[lr.zoop.stat$new_name %in% LR.names,2:5], zooDAT.LR[,2:9])
 rownames(LR.data) <- zooDAT.LR[,1]
+
+## Shelf
+
+sh <- read.csv("./data/shelf-edges.csv")[,c(2,1)]
+sh.names <- read.csv("./data/atlantic_shelf_taxa.csv")
+
+sh1 <- as.matrix(data.frame(sh.names[sh[,1],], sh.names[sh[,2],]))
+shg <- graph.edgelist(sh1)
+shm <- get.adjacency(shg, sparse = F)
+
+TL.troph.sh <- TrophInd(shm)
+
+#degree
+indeg.sh <- degree(graph = shg, mode = "in")
+outdeg.sh <- degree(graph = shg, mode = "out")
+
+#centrality
+## vertex betweenness
+vbet.sh <- betweenness(shg)
+## eigenvector centrality
+evc.sh <- evcent(graph = shg)$vector
+## google pagerank
+pr.sh <- page.rank(graph = shg)$vector
+## subgraph centrality
+subcent.sh <- subgraph.centrality(graph = shg)
+
+allDAT.sh <- cbind(TL.troph.sh, indeg.sh, outdeg.sh, vbet.sh, evc.sh, pr.sh, subcent.sh)
