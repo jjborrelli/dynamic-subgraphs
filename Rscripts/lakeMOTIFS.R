@@ -3,6 +3,7 @@ library(magrittr)
 library(taxize)
 library(igraph)
 library(NetIndices)
+library(rnetcarto)
 
 ## FUNCTIONS
 
@@ -50,6 +51,16 @@ listROLES <- function(x){
   return(as.data.frame(m2))
 }
 
+##
+conversion <- function(tm){
+  for(i in 1:nrow(tm)){
+    for(j in 1:ncol(tm)){
+      if(tm[i,j] == 1){tm[j,i] <- -1}
+    }
+  }
+  return(tm)
+}
+
 ## Data
 
 data(TL84)
@@ -76,6 +87,9 @@ spp <- read.csv("./data/TL_empirical_species.csv", row.names = 1)
 
 TLg <- graph.union(g84, g86)
 aTL <- get.adjacency(TLg, sparse = F)
+unconnected <- which(colSums(aTL) == 0 & rowSums(aTL) == 0)
+aTL <- aTL[-unconnected, -unconnected]
+TLg <- graph.adjacency(aTL)
 
 TL.zoop.stat <- read.csv("./time_series_stats/ts_stats_TL_zoop_all_yr.csv", row.names = 1)
 TL.phyto.stat <- read.csv("./time_series_stats/ts_stats_TL_phyto_all_yr.csv")
@@ -110,13 +124,19 @@ prP <- page.rank(graph = TLg)$vector[inDATphyto]
 subcent <- subgraph.centrality(graph = TLg)[inDAT]
 subcentP <- subgraph.centrality(graph = TLg)[inDATphyto]
 
+## modularity
+symTL <- abs(conversion(aTL))
+nc.mod <- netcarto(symTL)
+inDAT.mod <- nc.mod[[1]][nc.mod[[1]]$name %in% inDAT,][order(nc.mod[[1]][nc.mod[[1]]$name %in% inDAT,]$name),]
+inDATphyto.mod <- nc.mod[[1]][nc.mod[[1]]$name %in% inDATphyto,][order(nc.mod[[1]][nc.mod[[1]]$name %in% inDATphyto,]$name),]
+
 # zooDAT is a dataframe of zooplankton data
 zooDAT <- cbind(TL.zoop.stat[inDAT,], TL.troph, indeg, outdeg, vbet, evc, pr, subcent)
-phytoDAT <- cbind(TL.phyto.stat[TL.phyto.stat[,1] == inDATphyto, -1], TL.troph.p, indegP, outdegP, vbetP, evcP, prP, subcentP)
+phytoDAT <- cbind(TL.phyto.stat[TL.phyto.stat[,1] %in% inDATphyto, -1], TL.troph.p, indegP, outdegP, vbetP, evcP, prP, subcentP)
 rownames(phytoDAT) <- inDATphyto
 colnames(phytoDAT) <- colnames(zooDAT)
 
-TL.data <- rbind(phytoDAT, zooDAT)
+TL.data <- data.frame(rbind(phytoDAT, zooDAT), rbind(inDATphyto.mod[,-1], inDAT.mod[,-1]))
 TL.data <- cbind(web = factor("TuesdayLake"), TL.data)
 
 summary(prcomp(TL.data[-10, -c(1:4)]))
